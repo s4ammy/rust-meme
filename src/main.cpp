@@ -1,7 +1,7 @@
 #include "../build/debug/rs/src/memflow/memflow-ffi/memflow.hpp"
 
 template<typename t>
-CSliceRef<uint8_t> make_ref(t data)
+CSliceRef<uint8_t> make_ref(t data)//github copilot
 {
     CSliceRef<uint8_t> ref {};
     ref.data = (uint8_t*)&data;
@@ -11,7 +11,7 @@ CSliceRef<uint8_t> make_ref(t data)
 }
 
 template<typename t>
-CSliceMut<uint8_t> make_mut(t data)
+CSliceMut<uint8_t> make_mut(t data)//github copilot
 {
     CSliceMut<uint8_t> mut {};
     mut.data = (uint8_t*)&data;
@@ -34,7 +34,7 @@ t read_mem(OsInstance<> os, uint64_t address)
 
 //inverse of read_mem
 template<typename t>
-void write_mem(OsInstance<> os, uint64_t address, t data)
+void write_mem(OsInstance<> os, uint64_t address, t data)//github copilot
 {
     CSliceRef<uint8_t> ref = make_ref(data);
 
@@ -128,7 +128,7 @@ int main(int argc, char *argv[])
 
 	write_mem<int>(os, culling_class + 0x94, 1);
 
-    printf("set culling.debug to 1\n");
+    log_info("successfully patched occlusion culling");
 
     return 0;
 }
