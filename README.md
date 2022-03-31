@@ -13,5 +13,5 @@ enables admin esp in rust using memflow
 
 build the project `make release` for release, `make debug` for debug, and `make all` for both
 
-to run release: ./build/release/rust
-to run debug: ./build/debug/rust
+to run release: `./build/release/rust`
+to run debug: `./build/debug/rust`
