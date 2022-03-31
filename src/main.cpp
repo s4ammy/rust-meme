@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     log_init(LevelFilter::LevelFilter_Error);
 
     Inventory *inventory = inventory_scan();
-	if (!inventory)
+    if (!inventory)
     {
 		log_error("unable to create inventory");
 
@@ -60,9 +60,9 @@ int main(int argc, char *argv[])
 
 	ConnectorInstance<> connector, *conn = conn_name[0] ? &connector : nullptr;
 
-	if (conn)
+    if (conn)
     {
-		if (inventory_create_connector(inventory, conn_name, conn_arg, &connector))
+        if (inventory_create_connector(inventory, conn_name, conn_arg, &connector))
         {
 			log_error("unable to initialize connector");
 
@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
 	OsInstance<> os;
 	if (inventory_create_os(inventory, os_name, os_arg, conn, &os))
     {
-		log_error("unable to initialize os");
+        log_error("unable to initialize os");
 
 		inventory_free(inventory);
 		return 1;
