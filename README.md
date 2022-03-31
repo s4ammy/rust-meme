@@ -1,6 +1,6 @@
 # rust-meme
 
-enables admin esp in rust using [memlow](https://github.com/memflow/memflow)
+enables admin esp in rust using [memflow](https://github.com/memflow/memflow)
 
 ## build requirements
 
