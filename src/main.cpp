@@ -27,7 +27,7 @@ t read_mem(OsInstance<> os, uint64_t address)
 
     CSliceMut<uint8_t> mut = make_mut(data_out);
 
-    os.read_raw_into(address, mut);
+    os.read_raw_into(address, make_mut(data_out));
 
     return data_out;
 }
@@ -105,7 +105,10 @@ int main(int argc, char *argv[])
     uint64_t unity_base = unity_module.base;
     uint64_t unity_size = unity_module.size;
 
-    //OcclusionCulling_TypeInfo
+    /*
+        run il2cppdumper and find the following inside script.json:
+        OcclusionCulling_TypeInfo
+    */
     uint64_t occlusion_culling_type_info = read_mem<uint64_t>(os, assembly_base + 0x0);
     if (!occlusion_culling_type_info)
 	{
